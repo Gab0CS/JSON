@@ -31,7 +31,7 @@ struct Login: View {
                 }){
                     Text("Login").foregroundColor(.white).bold()
                 }
-            }
-        }.padding()
+            }.padding(.all)
+        }
     }
 }

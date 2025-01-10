@@ -14,7 +14,9 @@ struct JSONApp: App {
     var body: some Scene {
         let login = PostViewModel()
         WindowGroup {
-            ContentView().environment(login)
+            ContentView()
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environmentObject(login)
         }
     }
 }

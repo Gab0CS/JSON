@@ -34,6 +34,7 @@ class PostViewModel: ObservableObject {
                 if !datos.token.isEmpty{
                     // Dispatch queue necesaria para traer los datos en segundo plano
                     DispatchQueue.main.async {
+                        print(datos.token)
                         self.authenticated = 1
                     }
                 }
