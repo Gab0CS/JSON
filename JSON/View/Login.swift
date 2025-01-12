@@ -12,26 +12,33 @@ struct Login: View {
     @State var password = ""
     @EnvironmentObject var login: PostViewModel
     var body: some View{
-        ZStack{
-            Color.blue.edgesIgnoringSafeArea(.all)
-            VStack{
-                Text("Email").foregroundColor(.white).bold()
-                TextField("Email", text: $email)
-                    .background(Color.white)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .keyboardType(.emailAddress)
-                    .padding()
-                Text("Password").foregroundColor(.white).bold()
-                SecureField("Password", text: $password)
-                    .background(Color.white)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
-                Button(action: {
-                    login.login(email: email, password: password)
-                }){
-                    Text("Login").foregroundColor(.white).bold()
+            ZStack{
+                Color.black.ignoresSafeArea(.all)
+                VStack{
+                    Image(systemName: "person").font(.system(size: 50))
+                    .foregroundColor(.white)
                 }
-            }.padding(.all)
-        }
+            }
+            ZStack{
+                Color.blue.edgesIgnoringSafeArea(.all)
+                VStack{
+                    Text("Email").foregroundColor(.white).bold()
+                    TextField("Email", text: $email)
+                        .background(Color.white)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .keyboardType(.emailAddress)
+                        .padding()
+                    Text("Password").foregroundColor(.white).bold()
+                    SecureField("Password", text: $password)
+                        .background(Color.white)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding()
+                    Button(action: {
+                        login.login(email: email, password: password)
+                    }){
+                        Text("Login").foregroundColor(.white).bold()
+                    }
+                }
+            }.cornerRadius(20)
     }
 }
