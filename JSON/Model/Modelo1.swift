@@ -11,4 +11,13 @@ struct Modelo1: Decodable {
     var id: Int
     var name: String
     var email: String
+    var address: Address
+}
+struct Address: Decodable {
+    var street: String
+    var geo: Geo
+}
+struct Geo: Decodable {
+    var lat: String
+    var lng: String
 }

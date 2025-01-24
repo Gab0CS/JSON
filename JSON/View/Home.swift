@@ -20,7 +20,7 @@ struct Home: View {
                 List(json.datosModelo, id: \.id){ item in
                     VStack(alignment: .leading){
                         Text(item.name)
-                        Text(item.email)
+                        Text(item.address.geo.lat)
                     }
                 }.navigationBarTitle("JSON")
                 .navigationBarItems(leading:
